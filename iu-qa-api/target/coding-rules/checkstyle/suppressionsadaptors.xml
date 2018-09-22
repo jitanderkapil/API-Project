@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE suppressions PUBLIC
+    "-//Puppy Crawl//DTD Suppressions 1.1//EN"
+    "http://www.puppycrawl.com/dtds/suppressions_1_1.dtd">
+
+<suppressions>
+   <suppress checks="[a-zA-Z0-9]*" files="src[/\\]main[/\\]resources" />
+   <suppress checks="[a-zA-Z0-9]*" files="target" />
+   <suppress checks="[a-zA-Z0-9]*" files="src[/\\]test" />
+   <suppress checks="[a-zA-Z0-9]*" files="src[/\\]it" />
+   <suppress checks="[a-zA-Z0-9]*" files="src[/\\]qa" />
+   <suppress checks="[a-zA-Z0-9]*" files="src[/\\]doc" />
+
+   <!-- GWT ViewImpl must expose protected member variables -->
+   <suppress checks="VisibilityModifierCheck" files=".*ViewImpl\.java" />
+
+   <!-- No reason to forbid inline conditional : ? -->
+   <suppress checks="AvoidInlineConditionalsCheck" files=".*\.java" />
+
+   <!-- Remove this check due to dependency injection. Should ideally be allowed in injected constructors -->
+   <suppress checks="ParameterNumberCheck" files=".*\.java" />
+</suppressions>

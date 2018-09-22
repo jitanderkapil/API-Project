@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<FindBugsFilter  
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:noNamespaceSchemaLocation="http://findbugs.googlecode.com/svn/trunk/findbugs/etc/bugcollection.xsd">   
+  <Match>
+     <Class name="~.*\.Test.*"/>
+  </Match>
+  <Match>
+    <And>
+      <Not><Bug pattern="SE_NO_SERIALVERSIONID"/></Not>
+      <Or>
+        <Rank value="6"></Rank>
+        <Rank value="7"></Rank>
+        <Rank value="8"></Rank>
+        <Rank value="9"></Rank>
+        <Rank value="10"></Rank>
+        <Rank value="11"></Rank>
+        <Rank value="12"></Rank>
+        <Rank value="13"></Rank>
+        <Rank value="14"></Rank>
+        <Rank value="15"></Rank>
+        <Rank value="16"></Rank>
+        <Rank value="17"></Rank>
+        <Rank value="18"></Rank>
+        <Rank value="19"></Rank>
+        <Rank value="20"></Rank>
+      </Or>
+    </And>
+  </Match>
+</FindBugsFilter>

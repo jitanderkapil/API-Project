@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<FindBugsFilter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://findbugs.googlecode.com/svn/trunk/findbugs/etc/bugcollection.xsd">
+  <Match>
+     <Or>
+       <Class name="~.*\.Test.*"/>
+       <Class name="~.*Mojo.*"/>
+       <Bug pattern="NM_METHOD_NAMING_CONVENTION" />
+    </Or>
+  </Match>
+</FindBugsFilter>

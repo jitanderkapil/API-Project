@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<FindBugsFilter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://findbugs.googlecode.com/svn/trunk/findbugs/etc/bugcollection.xsd">
+  <Match>
+    <Or>
+      <Class name="~.*\.Test.*" />
+      <Class name="~.*Mojo.*" />
+      <Class name="~.*_$" />
+      <!-- Philippe, 2014-07 : excluding OpenJPA classes, which seem to confuse FB (on SECOND compilation, without clean -->
+      <Class name="~com\.mycom\.streams\.admin\.domain\.model\.entities\..*" />
+      <Class name="~com\.mycom\.streams\.admin\.domain\.model\.metadata\..*" />
+    </Or>
+  </Match>
+  
+  <!-- Usefull but requires a large refactor in the NBI. To be re-activated -->
+  <Match>
+    <Bug pattern="NM_METHOD_NAMING_CONVENTION" />
+  </Match>
+
+  <!-- use of instanceof is too resource-consuming in GWT, disabling on client-side -->
+  <Match>
+    <And>
+      <Or>
+        <Bug pattern="BC_UNCONFIRMED_CAST" />
+        <Bug pattern="BC_UNCONFIRMED_CAST_OF_RETURN_VALUE" />
+      </Or>
+      <Or>
+        <Class name="~com\.mycom\.nova\.reporter\.client\..*" />
+        <Class name="~com\.mycom\.nova\.designer\.client\..*" />
+        <Class name="~com\.google\.gwt\.user\.cellview\.client\..*" />
+      </Or>
+    </And>
+  </Match>
+
+  <!-- Remove unrestored transient fields from servlets -->
+  <Match>
+     <And>
+       <Bug pattern="SE_TRANSIENT_FIELD_NOT_RESTORED"/>
+       <Class name="~com\.mycom\.nova\.interfaces\..*Servlet"/>
+     </And>
+  </Match>
+
+
+  <Match>
+    <Bug pattern="NM_CONFUSING" />
+  </Match>
+  <!-- Could be usefull for processing that provide user level strings. Should be re-activated and filtered on the class pattern -->
+  <Match>
+    <Bug pattern="DM_CONVERT_CASE" />
+  </Match>
+  <!-- anonymous class declaration should be permitted -->
+  <Match>
+    <Bug pattern="SIC_INNER_SHOULD_BE_STATIC_ANON" />
+  </Match>
+  <Match>
+    <!-- not a bad warning but impossible to enforce in legacy code -->
+    <Bug pattern="PZLA_PREFER_ZERO_LENGTH_ARRAYS" />
+  </Match>
+  <Match>
+    <!-- Serializable Servlet -->
+    <Bug pattern="MTIA_SUSPECT_SERVLET_INSTANCE_FIELD" />
+  </Match>
+  <Match>
+    <!-- Serializable Servlet -->
+    <Bug pattern="MSF_MUTABLE_SERVLET_FIELD" />
+  </Match>
+</FindBugsFilter>

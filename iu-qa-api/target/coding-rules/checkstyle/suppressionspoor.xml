@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE suppressions PUBLIC
+    "-//Puppy Crawl//DTD Suppressions 1.1//EN"
+    "http://www.puppycrawl.com/dtds/suppressions_1_1.dtd">
+
+<suppressions>
+   <suppress checks="[a-zA-Z0-9]*" files="src[/\\]main[/\\]resources" />
+   <suppress checks="[a-zA-Z0-9]*" files="target" />
+   <suppress checks="[a-zA-Z0-9]*" files="src[/\\]test" />
+
+   <!-- Quality level: VTI, 2013 -->
+   <suppress checks="ArrayTypeStyleCheck" files=".*\.java" />
+   <suppress checks="AvoidStarImportCheck" files=".*\.java" />
+   <suppress checks="ConstantNameCheck" files=".*\.java" />
+   <suppress checks="EmptyBlockCheck" files=".*\.java" />
+   <suppress checks="EmptyStatementCheck" files=".*\.java" />
+   <suppress checks="FileTabCharacterCheck" files=".*\.java" />
+   <suppress checks="HideUtilityClassConstructorCheck" files=".*\.java" />
+   <suppress checks="IndentationCheck" files=".*\.java" />
+   <suppress checks="InnerAssignmentCheck" files=".*\.java" />
+   <suppress checks="LeftCurlyCheck" files=".*\.java" />
+   <suppress checks="LineLengthCheck" files=".*\.java" />
+   <suppress checks="LocalVariableNameCheck" files=".*\.java" />
+   <suppress checks="LocalFinalVariableNameCheck" files=".*\.java" />
+   <suppress checks="MemberNameCheck" files=".*\.java" />
+   <suppress checks="MethodNameCheck" files=".*\.java" />
+   <suppress checks="MethodParamPadCheck" files=".*\.java" />
+   <suppress checks="ModifierOrderCheck" files=".*\.java" />
+   <suppress checks="NeedBracesCheck" files=".*\.java" />
+   <suppress checks="NewlineAtEndOfFileCheck" files=".*\.java" />
+   <suppress checks="NoWhitespaceBeforeCheck" files=".*\.java" />
+   <suppress checks="NoWhitespaceAfterCheck" files=".*\.java" />
+   <suppress checks="ParenPadCheck" files=".*\.java" />
+   <suppress checks="ParameterNameCheck" files=".*\.java" />
+   <suppress checks="OperatorWrapCheck" files=".*\.java" />
+   <suppress checks="RegexpSinglelineCheck" files=".*\.java" />
+   <suppress checks="RightCurlyCheck" files=".*\.java" />
+   <suppress checks="TodoCommentCheck" files=".*\.java" />
+   <suppress checks="TypeNameCheck" files=".*\.java" />
+   <suppress checks="UnusedImportsCheck" files=".*\.java" />
+   <suppress checks="UpperEllCheck" files=".*\.java" />
+   <suppress checks="StaticVariableNameCheck" files=".*\.java" />
+   <suppress checks="VisibilityModifierCheck" files=".*\.java" />
+
+
+
+   <!-- GWT ViewImpl must expose protected member variables -->
+   <suppress checks="VisibilityModifierCheck" files=".*ViewImpl\.java" />
+
+   <!-- No reason to forbid inline conditional : ? -->
+   <suppress checks="AvoidInlineConditionalsCheck" files=".*\.java" />
+
+   <!-- Remove this check due to dependency injection. Should ideally be allowed in injected constructors -->
+   <suppress checks="ParameterNumberCheck" files=".*\.java" />
+</suppressions>

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE project>
+<macker>
+   <ruleset name="nova.infrastructure dependencies">
+      <access-rule>
+         <deny>
+            <!-- example only - not useful for now -->
+            <from class="com.mycom.nova.infrastructure.**"/>
+            <to class="com.mycom.nova.domain.**"/>
+         </deny>
+      </access-rule>
+   </ruleset>
+</macker>
+
+
